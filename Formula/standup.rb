@@ -5,21 +5,21 @@
 class Standup < Formula
   desc "Terminal dashboard for Jira sprint issues and GitHub PRs across clients"
   homepage "https://github.com/jhonsanchez/standup"
-  version "0.8.1"
+  version "0.9.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jhonsanchez/standup/releases/download/v0.8.1/standup_0.8.1_darwin_amd64.tar.gz"
-      sha256 "7fbee6350e36bff5fdfef0a5e6a580f2231a182ca841ad71ca3ea3de023615d1"
+      url "https://github.com/jhonsanchez/standup/releases/download/v0.9.0/standup_0.9.0_darwin_amd64.tar.gz"
+      sha256 "b3847a9dc5c29c78aecd5038f55c18d60f86daea4ffadc5a0a7b6922f7c304d6"
 
       define_method(:install) do
         bin.install "standup"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jhonsanchez/standup/releases/download/v0.8.1/standup_0.8.1_darwin_arm64.tar.gz"
-      sha256 "2c7709c601177ecb46e7dc7061ac3c5c7f6fc8a613c3c609a246baf0ca0290d5"
+      url "https://github.com/jhonsanchez/standup/releases/download/v0.9.0/standup_0.9.0_darwin_arm64.tar.gz"
+      sha256 "3c041df62b7b43210067496831883bc99f233c8f32b351ff8edf04e844ce2df6"
 
       define_method(:install) do
         bin.install "standup"
@@ -29,15 +29,15 @@ class Standup < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jhonsanchez/standup/releases/download/v0.8.1/standup_0.8.1_linux_amd64.tar.gz"
-      sha256 "b27dfb28858837449f8281bae93308831fbd9f187476c9a7408f7815e6846ce6"
+      url "https://github.com/jhonsanchez/standup/releases/download/v0.9.0/standup_0.9.0_linux_amd64.tar.gz"
+      sha256 "5e8b0171f93f8b1920fe33710f8e95c5b457f731f3b6afbaf6582000a5e88608"
       define_method(:install) do
         bin.install "standup"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jhonsanchez/standup/releases/download/v0.8.1/standup_0.8.1_linux_arm64.tar.gz"
-      sha256 "7308f341c95a7c4b40f631e6d51a4e7de44c72b16e58559334ffc9cd2995a705"
+      url "https://github.com/jhonsanchez/standup/releases/download/v0.9.0/standup_0.9.0_linux_arm64.tar.gz"
+      sha256 "68911442304b63ff23d37d28f55921db5b24c74198763198841d1d8b06c5695d"
       define_method(:install) do
         bin.install "standup"
       end
