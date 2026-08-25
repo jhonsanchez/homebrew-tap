@@ -5,21 +5,21 @@
 class Standup < Formula
   desc "Terminal dashboard for Jira sprint issues and GitHub PRs across clients"
   homepage "https://github.com/jhonsanchez/standup"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jhonsanchez/standup/releases/download/v0.2.0/standup_0.2.0_darwin_amd64.tar.gz"
-      sha256 "c8941d0809ebd55427ada582662ae9aa6feaf65bd6e88898f59215035f2c7f78"
+      url "https://github.com/jhonsanchez/standup/releases/download/v0.3.0/standup_0.3.0_darwin_amd64.tar.gz"
+      sha256 "f4cc1d152349d8c225b825a522a9fff5f18afae19dda2c6862a9b1cbba659222"
 
       define_method(:install) do
         bin.install "standup"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jhonsanchez/standup/releases/download/v0.2.0/standup_0.2.0_darwin_arm64.tar.gz"
-      sha256 "85195fc90291672ec0040e21c0aad4e9ecc683899a232d95e0c6d50ff3a86071"
+      url "https://github.com/jhonsanchez/standup/releases/download/v0.3.0/standup_0.3.0_darwin_arm64.tar.gz"
+      sha256 "51ea64469e0e93a6182887b689c7fc0266cba5615a0c1bbb472b3299f3574955"
 
       define_method(:install) do
         bin.install "standup"
@@ -29,19 +29,32 @@ class Standup < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jhonsanchez/standup/releases/download/v0.2.0/standup_0.2.0_linux_amd64.tar.gz"
-      sha256 "5df6b811d63f7529ce70161eeaac0d9c86f99fd2fcf700302342281c1a1d12a2"
+      url "https://github.com/jhonsanchez/standup/releases/download/v0.3.0/standup_0.3.0_linux_amd64.tar.gz"
+      sha256 "09612c5a0dccd377a7b8cec03b6c3f51129b68e2f69cb8945a479ce56686879e"
       define_method(:install) do
         bin.install "standup"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jhonsanchez/standup/releases/download/v0.2.0/standup_0.2.0_linux_arm64.tar.gz"
-      sha256 "8f0129e05d9eef16952adbb2841a6d513d6d139d5d32637755c2d7e184aff16b"
+      url "https://github.com/jhonsanchez/standup/releases/download/v0.3.0/standup_0.3.0_linux_arm64.tar.gz"
+      sha256 "a6c28a9d7bf0c23101125c9f1ae0393e82ac9a502152b116156d94472e23e27c"
       define_method(:install) do
         bin.install "standup"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      Config lives at ~/.config/standup/config.yaml — a commented starter
+      file is created the first time you run standup.
+
+      Icons need a Nerd Font (e.g. JetBrainsMono Nerd Font):
+        brew install --cask font-jetbrains-mono-nerd-font
+      …or set `icons: ascii` in the config.
+
+      Verify your setup any time with:  standup doctor
+    EOS
   end
 
   test do
